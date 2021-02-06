@@ -12,11 +12,11 @@ const passport = require("passport");
 const session = require('express-session');
 
 
-const result = dotenv.config();
+// const result = dotenv.config();
 
-if (result.error) {
-  throw result.error;
-}
+// if (result.error) {
+//   throw result.error;
+// }
 
 mongoose.connect(process.env.DB_URI, {useUnifiedTopology: true, useNewUrlParser: true});
 const db = mongoose.connection;
