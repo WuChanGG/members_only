@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  body(class="h-100 w-100 justify-content-center")
+    div(class="container-fluid h-100")
+      div(class="row h-100")
+        div(class="col-md-2 sidebar-sticky h-100 second-blue")
+          p(class="mt-10")
+            a(href="/") Message Board (Home)
+          p
+            a(href="/users/register") Register User
+          p
+            a(href="/users/login") Login 
+          p
+            a(href="/users/dashboard") User Dashboard
+          p
+            a(href="/messages/createMessage") Create Message
+
+        block content

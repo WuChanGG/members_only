@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    div(class="col-md-10 justify-content-center align-items-center flex-column third-blue")
+        if failedUserObject
+            form(action="" method="POST" class="w-100")
+                div.form-group
+                    label(for="username" class="text-center w-100 first-blue-text") Username:
+                    br
+                    input(type="text" name="username" placeholder="Username Here" class="rounded fourth-blue w-100" value=failedUserObject.username ? failedUserObject.username : "")
+                div.form-group
+                    label(for="password" class="text-center w-100 first-blue-text") Password:
+                    br
+                    input(type="password" name="password" placeholder="Password Here" class="rounded fourth-blue w-100")
+                div.form-group
+                    label(for="fullName" class="text-center w-100 first-blue-text") Full Name:
+                    br
+                    input(type="text" name="fullName" placeholder="Fullname Here" class="w-100 rounded fourth-blue" value=failedUserObject.fullName ? failedUserObject.fullName : '')
+                button(type="submit" class="first-blue first-blue-text p-2 rounded w-100 text-center w-100") Submit
+        else
+            form(action="" method="POST" class="w-100")
+                div.form-group
+                    label(for="username" class="text-center w-100 first-blue-text") Username:
+                    br
+                    input(type="text" name="username" placeholder="Username Here" class="w-100 rounded fourth-blue")
+                div.form-group
+                    label(for="password" class="text-center w-100 first-blue-text") Password:
+                    br
+                    input(type="password" name="password" placeholder="Password Here" class="w-100 rounded fourth-blue")
+                div.form-group
+                    label(for="fullName" class="text-center w-100 first-blue-text") Full Name:
+                    br
+                    input(type="text" name="fullName" placeholder="Fullname Here" class="w-100 rounded fourth-blue")
+                div.form-group
+                    button(type="submit" class="first-blue first-blue-text p-2 rounded w-100 text-center") Submit
+        if errors
+            br
+            div(class="first-blue-text w-100 text-center align-items-center p-100")
+                h3 Registration error:
+                ul
+                    for error in errors
+                        li!= error.msg
+            
+

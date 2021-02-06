@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div(class="d-flex-column col-md-10 justify-content-center third-blue first-blue-text text-center")
+        if user
+            form(method="POST" action="" class="d-flex-column" id="messageform")
+                div(class="mt-3")
+                    label(for="title") Message Title
+                    input(type="text" name="title" class="fourth-blue w-100")
+                div
+                    label(for="message") Message Content:
+                    textarea(name="message" form="messageform" class="fourth-blue w-100")
+                div
+                    button(class="second-blue first-blue-text") Post Message
+        else
+            div
+                p(class="text-center mt-3") You need to log-in to post a mesage
+                div(class="text-center border border-dark second-blue")
+                    a(href="/users/login") Click here to log-in
+        if errors
+            for error in errors
+                p #{error.msg}
+

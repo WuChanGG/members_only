@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    div(class="third-blue col-md-10 d-flex-column justify-content-center mt-100")
+        if user
+            if user.membershipStatus == "User"
+                div(name='centered-div' class="text-center d-flex-column first-blue-text flex-grow-1 mt-3")
+                    p You are a user, but to be part of the club you need to enter the secret password to be a pro member
+                    form(action="" method="POST" class="flex-grow d-flex-column")
+                        label(for="password") Enter the club's secret password here:
+                        br
+                        input(name="password" class="fourth-blue" placeholder="The secret password is the name of one of the original 150 pokemons" class="flex-grow w-100")
+                        button(type="submit" class="first-blue first-blue-text p-2 rounded w-100 text-center") Submit
+            div(name='centered-div' class="text-center d-flex-column first-blue-text flex-grow-1 mt-3")
+                p Membership Status: #{user.membershipStatus}
+                div(class="border border-dark second-blue")
+                    a(href="/messages/createMessage" class="text-center w-100") Click Here To Create Message.
+            if error
+                div
+                    p(class="text-center first-blue-text") #{error}
+        else
+            div(name="centered-div mt-100 h-100 w-100")
+                div(class="justify")
+                    p(class="text-center first-blue-text") You are not logged in.
+                div()
+                    a(href="/users/login" class="text-center" ) Click here to login.
+                div
+                    a(href="/users/register" class="text-center") Click here to register.
+

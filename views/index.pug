@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div(class="third-blue col-md-10 first-blue-text d-flex-column")
+    div(class="second-blue mt-3 p-3 text-center")
+      p WELCOME to the club. A regular user can create messages, but only club members can see the author of a message.
+      p To join the club register, login, and go to the dashboard. In the dashboard you will have to find out the secret password to join the club.
+    if messages
+      for message in messages
+        div(class="second-blue border border-light first-blue-text mt-3 p-3")
+          if (user && user.membershipStatus === "ProUser")
+            div(class="")
+              if !message.user
+                p message user null
+              else
+                h3 #{message.user.username} says:
+          div(class="")
+            h4 #{message.title}
+          div(class="")
+            p #{message.message}
+          div(class="border-top border-light")
+            p Message sent in #{message.date}
+          

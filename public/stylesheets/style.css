@@ -1,0 +1,38 @@
+html,body {
+  padding: 50px;
+  font-family: 'Roboto';
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url(https://cdn.wallpapersafari.com/24/72/fv2P7V.jpg);
+}
+
+a, a:active, a:visited, a:link, a:hover {
+  color: #D0E1F9;
+}
+
+.first-blue {
+  background-color: #1E1F26;
+}
+
+.second-blue {
+  background-color: #283655;
+}
+
+.third-blue {
+  background-color: #4D648D;
+}
+
+.fourth-blue {
+  background-color: #D0E1F9;
+}
+
+.first-blue-text {
+  color: #D0E1F9;
+}
+
+ul {
+  list-style-type: none;
+}
