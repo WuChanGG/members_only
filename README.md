@@ -1,6 +1,8 @@
 # members_only
 An express project based on the description of this course's page: https://www.theodinproject.com/courses/nodejs/lessons/members-only
 
+You can see the app working live at https://wu-only-members.herokuapp.com/
+
 This project has the following features described in the Odin Project course page:
 
 ```
